@@ -80,13 +80,45 @@ namespace TDDProblems.Spreadsheet
         }
 
         [Test]
-        [Ignore]
-        public void testConstantFormula()
+        public void Test_Constant_Formula()
         {
             Sheet sheet = new Sheet();
             sheet["A1"] = "=7";
             Assert.That(sheet.GetLiteral("A1"), Is.EqualTo("=7"));
             Assert.That(sheet["A1"], Is.EqualTo("7"));
+        }
+
+        [TestCase("6")]
+        [TestCase("7")]
+        public void Test_Parentheses(string value)
+        {
+            Sheet sheet = new Sheet();
+            sheet["A1"] = string.Format("=({0})", value);
+            Assert.That(sheet["A1"], Is.EqualTo(value));
+        }
+
+        [Test]
+        public void testDeepParentheses()
+        {
+            Sheet sheet = new Sheet();
+            sheet["A1"] = "=((((10))))";
+            Assert.That(sheet["A1"], Is.EqualTo("10"));
+        }
+
+        [Test]
+        public void testMultiply()
+        {
+            Sheet sheet = new Sheet();
+            sheet["A1"] = "=2*3*4";
+            Assert.That(sheet["A1"], Is.EqualTo("24"));
+        }
+
+        [Test]
+        public void testAdd()
+        {
+            Sheet sheet = new Sheet();
+            sheet["A1"] = "=71+2+3";
+            Assert.That(sheet["A1"], Is.EqualTo("76"));
         }
 
         private static void AssertCellValue(Sheet s, string cell, string value)
