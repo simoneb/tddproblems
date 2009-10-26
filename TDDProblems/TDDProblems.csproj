@@ -54,6 +54,8 @@
     <Compile Include="PrimeFactors\PrimeFactorsTest.cs" />
     <Compile Include="Spreadsheet\Sheet.cs" />
     <Compile Include="Spreadsheet\SpreadsheetTest.cs" />
+    <Compile Include="StringCalculator\StringCalculator.cs" />
+    <Compile Include="StringCalculator\StringCalculatorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
