@@ -2,6 +2,7 @@
 
 namespace TDDProblems.IntegerRange
 {
+    [TestFixture]
     public class IntegerRangeTest
     {
         [Test]

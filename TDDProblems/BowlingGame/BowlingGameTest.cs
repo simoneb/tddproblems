@@ -2,6 +2,7 @@ using NUnit.Framework;
 
 namespace TDDProblems.BowlingGame
 {
+    [TestFixture]
     public class BowlingGameTest
     {
         private BowlingGame g;

@@ -45,6 +45,13 @@
     <Compile Include="BowlingGame\BowlingGame.cs" />
     <Compile Include="IntegerRange\IntegerRange.cs" />
     <Compile Include="IntegerRange\IntegerRangeTest.cs" />
+    <Compile Include="KataPotter\BookSet.cs" />
+    <Compile Include="KataPotter\Calculator.cs" />
+    <Compile Include="KataPotter\Cart.cs" />
+    <Compile Include="KataPotter\Test.cs" />
+    <Compile Include="PrimeFactors\Extensions.cs" />
+    <Compile Include="PrimeFactors\PrimeFactors.cs" />
+    <Compile Include="PrimeFactors\PrimeFactorsTest.cs" />
     <Compile Include="Spreadsheet\Sheet.cs" />
     <Compile Include="Spreadsheet\SpreadsheetTest.cs" />
   </ItemGroup>
