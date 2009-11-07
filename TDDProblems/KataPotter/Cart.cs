@@ -10,10 +10,10 @@ namespace TDDProblems.KataPotter
         public void Add(int book)
         {
             if (bookSets.Any(s => s.CanAccept(book)))
-                bookSets.Where(g => g.CanAccept(book))
-                    .Select(s => new { Set = s, TotalWithNewBook = s.TotalWith(book) })
-                    .OrderBy(g => g.TotalWithNewBook)
-                    .Select(g => g.Set)
+                (from set in bookSets
+                 let totalWithNewBook = set.TotalWith(book)
+                 orderby totalWithNewBook
+                 select set)
                     .First()
                     .Accept(book);
             else
